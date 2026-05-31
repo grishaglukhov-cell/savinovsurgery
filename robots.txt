@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://savinovsurgery.ru/sitemap.xml
+Sitemap: https://grishaglukhov-cell-savinovsurgery-efac.twc1.net/sitemap.xml
