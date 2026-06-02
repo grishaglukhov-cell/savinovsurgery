@@ -13,9 +13,14 @@
     />
 
     <!-- Performance: preload critical resources -->
-    <link rel="preload" as="image" href="assets/photo-doctor.jpg" fetchpriority="high">
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link
+      rel="preload"
+      as="image"
+      href="assets/photo-doctor.jpg"
+      fetchpriority="high"
+    />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -3334,13 +3339,43 @@
         });
       });
 
+      const TG_TOKEN = "8877940194:AAHld8knPGYOufIiBkp9WjExHvV1KYL54nc";
+      const TG_CHAT = "5047012665";
+
       function submitForm(e, id) {
         e.preventDefault();
-        const form = document.getElementById(
+        const formEl = e.target;
+        const data = Object.fromEntries(new FormData(formEl));
+
+        const lines = [
+          "🔔 <b>Новая заявка с сайта savinovplastic.ru</b>",
+          "",
+          `👤 <b>Имя:</b> ${data.name || "—"}`,
+          `📞 <b>Телефон:</b> ${data.phone || "—"}`,
+          data.service ? `💉 <b>Услуга:</b> ${data.service}` : null,
+          data.age ? `🎂 <b>Возраст:</b> ${data.age}` : null,
+          data.message ? `💬 <b>Комментарий:</b> ${data.message}` : null,
+          "",
+          `📍 <i>Источник: ${id === "main" ? "форма на сайте" : "модальное окно"}</i>`,
+        ]
+          .filter(Boolean)
+          .join("\n");
+
+        fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: TG_CHAT,
+            text: lines,
+            parse_mode: "HTML",
+          }),
+        });
+
+        const wrap = document.getElementById(
           id === "main" ? "form-box" : "modal-form",
         );
         const success = document.getElementById(id + "-success");
-        if (form) form.style.display = "none";
+        if (wrap) wrap.style.display = "none";
         if (success) success.style.display = "block";
       }
 
