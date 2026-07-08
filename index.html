@@ -531,7 +531,7 @@
         grid-template-columns: 1fr 1fr;
         position: relative;
         overflow: hidden;
-        background: var(--color-off-white);
+        background: #ffffff;
       }
       .hero-left {
         display: flex;
@@ -734,17 +734,15 @@
         position: absolute;
         inset: 0;
         z-index: 1;
-        background: linear-gradient(
-          to right,
-          var(--color-off-white) 0%,
-          transparent 18%
-        );
+        background: linear-gradient(to right, #ffffff 0%, transparent 18%);
       }
       .hero-right img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: top center;
+        animation: doctorTurn 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+        transform-origin: center center;
       }
       .hero-right-placeholder {
         width: 100%;
@@ -1991,6 +1989,18 @@
           transform: scale(1);
         }
       }
+      @keyframes doctorTurn {
+        from {
+          opacity: 0.6;
+          transform: perspective(1100px) rotateY(28deg) scale(1.06);
+          filter: brightness(0.92);
+        }
+        to {
+          opacity: 1;
+          transform: perspective(1100px) rotateY(0deg) scale(1);
+          filter: brightness(1);
+        }
+      }
 
       /* Hero entrance */
       .hero-eyebrow {
@@ -2015,7 +2025,7 @@
         animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.66s both;
       }
       .hero-right {
-        animation: fadeIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+        perspective: 1100px;
       }
 
       /* Scroll-triggered */
