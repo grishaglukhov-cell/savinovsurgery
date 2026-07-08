@@ -3103,11 +3103,13 @@
           );
         }
 
-        fetch("https://api.telegram.org/bot" + TG_TOKEN + "/sendMessage", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ chat_id: Number(TG_CHAT), text: text }),
-        })
+        const params = new URLSearchParams({ chat_id: TG_CHAT, text: text });
+        fetch(
+          "https://api.telegram.org/bot" +
+            TG_TOKEN +
+            "/sendMessage?" +
+            params.toString(),
+        )
           .then((r) => r.json())
           .then((j) => {
             if (!j.ok) console.error("TG error:", j);
