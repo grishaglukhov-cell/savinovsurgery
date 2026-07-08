@@ -1961,6 +1961,115 @@
       .lb-next {
         right: 20px;
       }
+
+      /* ── ANIMATIONS ── */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(28px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes scaleIn {
+        from {
+          opacity: 0;
+          transform: scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* Hero entrance */
+      .hero-eyebrow {
+        animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+      }
+      .hero-h1 {
+        animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+      }
+      .hero-sub {
+        animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.32s both;
+      }
+      .offer-pill {
+        animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.42s both;
+      }
+      .hero-ctas {
+        animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+      }
+      .hero-phone-form {
+        animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.58s both;
+      }
+      .hero-stats {
+        animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.66s both;
+      }
+      .hero-right {
+        animation: fadeIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+      }
+
+      /* Scroll-triggered */
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-scale {
+        opacity: 0;
+        transform: scale(0.97);
+        transition:
+          opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal-scale.visible {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* Card hover lift */
+      .svc-item,
+      .review-card,
+      .why-item,
+      .process-step,
+      .trust-item {
+        transition:
+          transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+          border-color 0.2s !important;
+      }
+      .svc-item:hover,
+      .review-card:hover,
+      .why-item:hover {
+        transform: translateY(-4px);
+      }
+
+      /* Button pulse on hover */
+      .btn-primary:hover,
+      .f-submit:hover,
+      .hero-phone-row button:hover {
+        transform: translateY(-1px);
+        transition: all 0.2s;
+      }
+
+      /* Nav fade in */
+      .nav {
+        animation: fadeIn 0.5s ease 0.05s both;
+      }
     </style>
   </head>
   <body>
@@ -2070,7 +2179,7 @@
     <div class="trust">
       <div class="container">
         <div class="trust-row">
-          <div class="trust-item">
+          <div class="trust-item reveal">
             <div>
               <div class="trust-n">ВМА</div>
               <div class="trust-d">
@@ -2078,7 +2187,7 @@
               </div>
             </div>
           </div>
-          <div class="trust-item">
+          <div class="trust-item reveal">
             <div>
               <div class="trust-n">15 лет</div>
               <div class="trust-d">
@@ -2086,7 +2195,7 @@
               </div>
             </div>
           </div>
-          <div class="trust-item">
+          <div class="trust-item reveal">
             <div>
               <div class="trust-n">Deep Plane</div>
               <div class="trust-d">
@@ -2094,7 +2203,7 @@
               </div>
             </div>
           </div>
-          <div class="trust-item">
+          <div class="trust-item reveal">
             <div>
               <div class="trust-n">Лицензия</div>
               <div class="trust-d">
@@ -2118,7 +2227,7 @@
           </p>
         </div>
         <div class="svc-grid">
-          <div class="svc-item">
+          <div class="svc-item reveal">
             <div class="svc-circle">
               <div class="svc-circle-inner">
                 <div class="svc-circle-ico">👁️</div>
@@ -2131,7 +2240,7 @@
               результат выглядит как хороший сон, а не как операция.
             </div>
           </div>
-          <div class="svc-item">
+          <div class="svc-item reveal">
             <div class="svc-circle">
               <div class="svc-circle-inner">
                 <div class="svc-circle-ico">✨</div>
@@ -2144,7 +2253,7 @@
               Результат держится 10–15 лет и выглядит абсолютно естественно.
             </div>
           </div>
-          <div class="svc-item">
+          <div class="svc-item reveal">
             <div class="svc-circle">
               <div class="svc-circle-inner">
                 <div class="svc-circle-ico">🌿</div>
@@ -2157,7 +2266,7 @@
               брови без открытых рубцов — следов не остаётся.
             </div>
           </div>
-          <div class="svc-item">
+          <div class="svc-item reveal">
             <div class="svc-circle">
               <div class="svc-circle-inner">
                 <div class="svc-circle-ico">💧</div>
@@ -2171,7 +2280,7 @@
               рассасывается.
             </div>
           </div>
-          <div class="svc-item">
+          <div class="svc-item reveal">
             <div class="svc-circle">
               <div class="svc-circle-inner">
                 <div class="svc-circle-ico">〰️</div>
@@ -2184,7 +2293,7 @@
               подбородок» — силуэт становится чётким и молодым.
             </div>
           </div>
-          <div class="svc-item">
+          <div class="svc-item reveal">
             <div class="svc-circle">
               <div class="svc-circle-inner">
                 <div class="svc-circle-ico">🌸</div>
@@ -2197,7 +2306,7 @@
               жизни. Естественная форма без пластической «заметности».
             </div>
           </div>
-          <div class="svc-item">
+          <div class="svc-item reveal">
             <div class="svc-circle">
               <div class="svc-circle-inner">
                 <div class="svc-circle-ico">⚖️</div>
@@ -2210,7 +2319,7 @@
               дискомфорта и ограничений в спорте — и улучшает пропорции.
             </div>
           </div>
-          <div class="svc-item">
+          <div class="svc-item reveal">
             <div class="svc-circle">
               <div class="svc-circle-inner">
                 <div class="svc-circle-ico">🔼</div>
@@ -2268,7 +2377,7 @@
     <!-- ABOUT -->
     <section class="about" id="about">
       <div class="container">
-        <div class="about-grid">
+        <div class="about-grid reveal">
           <div class="about-photo">
             <img
               src="assets/photo-doctor.jpg"
@@ -2535,7 +2644,7 @@
     <!-- PROCESS -->
     <section class="process" id="process">
       <div class="container">
-        <div class="process-head">
+        <div class="process-head reveal">
           <span class="label">Как проходит работа</span>
           <h2 class="h2">От первого визита<br />до <em>результата</em></h2>
         </div>
@@ -2588,12 +2697,12 @@
     <!-- WHY -->
     <section class="why" id="why">
       <div class="container">
-        <div class="why-head">
+        <div class="why-head reveal">
           <span class="label">Почему Савинов</span>
           <h2 class="h2">Четыре причины<br /><em>доверить</em> операцию</h2>
         </div>
         <div class="why-grid">
-          <div class="why-card">
+          <div class="why-card reveal">
             <div class="why-num">1</div>
             <div>
               <div class="why-title">Честная консультация — без продажи</div>
@@ -2604,7 +2713,7 @@
               </div>
             </div>
           </div>
-          <div class="why-card">
+          <div class="why-card reveal">
             <div class="why-num">2</div>
             <div>
               <div class="why-title">Технология, которая держит результат</div>
@@ -2615,7 +2724,7 @@
               </div>
             </div>
           </div>
-          <div class="why-card">
+          <div class="why-card reveal">
             <div class="why-num">3</div>
             <div>
               <div class="why-title">Один хирург — от и до</div>
@@ -2626,7 +2735,7 @@
               </div>
             </div>
           </div>
-          <div class="why-card">
+          <div class="why-card reveal">
             <div class="why-num">4</div>
             <div>
               <div class="why-title">Лицензированная клиника в Москве</div>
@@ -2649,7 +2758,7 @@
           <h2 class="h2">Они уже <em>изменили</em> свою жизнь</h2>
         </div>
         <div class="reviews-grid">
-          <div class="review">
+          <div class="review reveal-scale">
             <div class="review-stars">★★★★★</div>
             <div class="review-text">
               Делала блефаропластику. Боялась, что будет заметно. Но всё
@@ -2664,7 +2773,7 @@
               </div>
             </div>
           </div>
-          <div class="review">
+          <div class="review reveal-scale">
             <div class="review-stars">★★★★★</div>
             <div class="review-text">
               Три месяца после маммопластики. Форма именно та, что мы обсуждали
@@ -2679,7 +2788,7 @@
               </div>
             </div>
           </div>
-          <div class="review">
+          <div class="review reveal-scale">
             <div class="review-stars">★★★★★</div>
             <div class="review-text">
               Deep Plane — совсем не то же, что обычная подтяжка. Я долго
@@ -2706,7 +2815,7 @@
           <h2 class="h2">Отвечаю <em>честно</em></h2>
         </div>
         <div class="faq-list">
-          <div class="faq-item">
+          <div class="faq-item reveal">
             <button class="faq-q">
               Насколько болезненны операции и каков период восстановления?
               <div class="faq-icon">+</div>
@@ -2722,7 +2831,7 @@
               </div>
             </div>
           </div>
-          <div class="faq-item">
+          <div class="faq-item reveal">
             <button class="faq-q">
               Как выглядит результат — не будет ли «пластического» вида?
               <div class="faq-icon">+</div>
@@ -2737,7 +2846,7 @@
               </div>
             </div>
           </div>
-          <div class="faq-item">
+          <div class="faq-item reveal">
             <button class="faq-q">
               Какова стоимость операций?
               <div class="faq-icon">+</div>
@@ -2753,7 +2862,7 @@
               </div>
             </div>
           </div>
-          <div class="faq-item">
+          <div class="faq-item reveal">
             <button class="faq-q">
               Можно ли получить консультацию онлайн?
               <div class="faq-icon">+</div>
@@ -2767,7 +2876,7 @@
               </div>
             </div>
           </div>
-          <div class="faq-item">
+          <div class="faq-item reveal">
             <button class="faq-q">
               Насколько долго держится результат фейслифта?
               <div class="faq-icon">+</div>
@@ -2782,7 +2891,7 @@
               </div>
             </div>
           </div>
-          <div class="faq-item">
+          <div class="faq-item reveal">
             <button class="faq-q">
               Есть ли возрастные ограничения?
               <div class="faq-icon">+</div>
@@ -2831,7 +2940,7 @@
     <!-- FORM -->
     <section class="form-sec" id="form">
       <div class="container">
-        <div class="form-grid">
+        <div class="form-grid reveal">
           <div>
             <span class="label">Контакты</span>
             <h2 class="h2">Запишитесь<br />на <em>приём</em></h2>
@@ -3212,6 +3321,22 @@
           ws.scrollLeft = scrollLeft - (e.pageX - ws.offsetLeft - startX);
         });
       }
+
+      // Scroll-triggered reveal
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => entry.target.classList.add("visible"), i * 60);
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document.querySelectorAll(".reveal, .reveal-scale").forEach((el) => {
+        revealObserver.observe(el);
+      });
     </script>
 
     <!-- ====================================================
