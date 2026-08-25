@@ -3196,12 +3196,7 @@
         if (e.key === "Escape") closeModal();
       });
 
-      if (!sessionStorage.getItem("modal_shown")) {
-        setTimeout(() => {
-          openModal();
-          sessionStorage.setItem("modal_shown", "1");
-        }, 35000);
-      }
+      // Автопоказ модалки через 35 с отключён по запросу пользователя
 
       const burger = document.getElementById("burger");
       const menu = document.getElementById("nav-menu");
