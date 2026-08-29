@@ -3272,6 +3272,21 @@
             if (!j.ok) console.error("TG error:", j);
           })
           .catch((err) => console.error("TG fetch error:", err));
+        
+        // Отправка заявки также в МАКС (через сервер-посредник)
+        fetch("https://savinov-max-relay.vercel.app/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: data.name,
+            phone: data.phone,
+            service: data.service,
+            age: data.age,
+            message: data.message,
+            source: id,
+          }),
+        }).catch((err) => console.error("MAX relay fetch error:", err));
+
       }
 
       // Цели: клик по телефону
