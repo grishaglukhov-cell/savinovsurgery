@@ -2,6 +2,6 @@
   "name": "savinovsurgery",
   "version": "1.0.0",
   "scripts": {
-    "build": "mkdir -p build && cp -r index.html robots.txt sitemap.xml assets build/"
+    "build": "mkdir -p build && cp -r index.html doctor.jpg robots.txt sitemap.xml assets build/"
   }
 }
