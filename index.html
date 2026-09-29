@@ -3170,13 +3170,7 @@ main{min-width:0}.hero-left,.about-grid>div,.form-grid>div,.step,.svc-item,.why-
           <button class="btn btn-warm" data-open-modal>
             Записаться на консультацию →
           </button>
-          <a
-            href="https://max.ru/id323408489930_biz"
-            class="btn btn-ghost"
-            target="_blank"
-            rel="noopener"
-            >Написать в MAX</a
-          >
+          <a href="tel:+79054284626" class="btn btn-ghost"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>Позвонить</a>
         </div>
         <div class="cta-note">Отвечаю в течение часа · Работаю в Москве</div>
       </div>
@@ -3199,18 +3193,6 @@ main{min-width:0}.hero-left,.about-grid>div,.form-grid>div,.step,.svc-item,.why-
                 <div>
                   <div class="contact-lbl">Телефон</div>
                   <div class="contact-val">+7 (905) 428-46-26</div>
-                </div>
-              </a>
-              <a
-                href="https://max.ru/id323408489930_biz"
-                class="contact-row"
-                target="_blank"
-                rel="noopener"
-              >
-                <div class="contact-ico">💬</div>
-                <div>
-                  <div class="contact-lbl">MAX</div>
-                  <div class="contact-val">Написать сообщение</div>
                 </div>
               </a>
               <div class="contact-row">
@@ -3312,19 +3294,6 @@ main{min-width:0}.hero-left,.about-grid>div,.form-grid>div,.step,.svc-item,.why-
 
     <!-- CORNER CTA -->
     <div class="corner">
-      <a
-        href="https://max.ru/id323408489930_biz"
-        class="corner-btn corner-wa"
-        target="_blank"
-        rel="noopener"
-      >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"
-          />
-        </svg>
-        MAX
-      </a>
       <a href="tel:+79054284626" class="corner-btn corner-call"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>Позвонить</a>
       <button class="corner-btn corner-warm" data-open-modal>
         Записаться →
@@ -3443,7 +3412,7 @@ main{min-width:0}.hero-left,.about-grid>div,.form-grid>div,.step,.svc-item,.why-
           if(result.ok!==true && result.success!==true)throw new Error();
           const wrap=document.getElementById(id==='main'?'form-box':id==='modal'?'modal-form':'hero-form-wrap');
           wrap.style.display='none';document.getElementById(id+'-success').style.display='block';
-        }catch(err){message.textContent='Не удалось подтвердить отправку. Позвоните +7 (905) 428-46-26 или напишите в MAX.';button.disabled=false;} finally {clearTimeout(timeout);form.removeAttribute('aria-busy');}
+        }catch(err){message.textContent='Не удалось подтвердить отправку. Позвоните +7 (905) 428-46-26.';button.disabled=false;} finally {clearTimeout(timeout);form.removeAttribute('aria-busy');}
       }
 
       // Цели: клик по телефону
@@ -3454,13 +3423,6 @@ main{min-width:0}.hero-left,.about-grid>div,.form-grid>div,.step,.svc-item,.why-
         });
       });
 
-      // Цели: клик по MAX мессенджеру
-      document.querySelectorAll('a[href*="max.ru"]').forEach((el) => {
-        el.addEventListener("click", () => {
-          if (typeof ym !== "undefined")
-            ym(109546996, "reachGoal", "messenger_click");
-        });
-      });
 
       window.addEventListener("scroll", () => {
         document.getElementById("nav").style.boxShadow =
