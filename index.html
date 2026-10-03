@@ -3411,7 +3411,7 @@ main{min-width:0}.hero-left,.about-grid>div,.form-grid>div,.step,.svc-item,.why-
           const result=await r.json();
           if(result.ok!==true && result.success!==true)throw new Error();
           const wrap=document.getElementById(id==='main'?'form-box':id==='modal'?'modal-form':'hero-form-wrap');
-          wrap.style.display='none';document.getElementById(id+'-success').style.display='block';
+          wrap.style.display='none';document.getElementById(id+'-success').style.display='block';if(typeof ym==='function'){ym(109546996,'reachGoal','lead');ym(109546996,'reachGoal','lead_'+id);}
         }catch(err){message.textContent='Не удалось подтвердить отправку. Позвоните +7 (905) 428-46-26.';button.disabled=false;} finally {clearTimeout(timeout);form.removeAttribute('aria-busy');}
       }
 
