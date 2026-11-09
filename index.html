@@ -30,6 +30,7 @@ h1,h2,.display,.stats b,.card .num,.quote{font-family:Manrope,Arial,sans-serif;f
 @media(max-width:620px){.btn.maincta,.hero-copy .btn.maincta,.final .btn.maincta{width:100%;min-height:68px;padding:20px 18px;font-size:15px;gap:10px}.btn.maincta .max-icon{flex-shrink:0}.btn.maincta .arr{margin-left:auto}}
 
 </style>
+<script src="https://max.tgtrack.ru/API/landing_script/v1/?linkID=685ee7e66a59e&type=ya&counterID=109546996" type="text/javascript" defer></script>
 </head>
 <body>
 <header class="top"><div class="wrap nav"><div class="brand"><div class="brand-mark">AS</div><div><strong>Александр Савинов</strong><span>Пластический хирург · Москва</span></div></div><div class="navnote">Официальный информационный канал врача в MAX</div></div></header>
@@ -48,7 +49,7 @@ h1,h2,.display,.stats b,.card .num,.quote{font-family:Manrope,Arial,sans-serif;f
 /* Ссылка на канал MAX. */
 const MAX_CHANNEL_URL = 'https://max.ru/id323408489930_biz';
 const maxLinks = document.querySelectorAll('.max-link');
-maxLinks.forEach((a)=>{if(MAX_CHANNEL_URL && /^https:\/\/max\.ru\//.test(MAX_CHANNEL_URL)){a.href=MAX_CHANNEL_URL;}else{a.removeAttribute('target');a.addEventListener('click',(e)=>{e.preventDefault();alert('Для публикации лендинга добавьте реальную ссылку MAX-канала в константу MAX_CHANNEL_URL в конце HTML.');});}});
+
 /* Опционально: отправка события в Метрику при корректно установленном счётчике */
 maxLinks.forEach(a=>a.addEventListener('click',()=>{if(MAX_CHANNEL_URL && window.ym && window.SAVINOV_METRIKA_ID){window.ym(window.SAVINOV_METRIKA_ID,'reachGoal','max_click');}}));
 </script>
